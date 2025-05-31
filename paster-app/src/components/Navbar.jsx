@@ -1,12 +1,46 @@
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
-  return (
-    <div>
-    
-    
+  const location = useLocation();
 
-    </div>
+  return (
+    <nav className="navbar navbar-expand-lg fixed-top w-100" style={{ backgroundColor: '#0a1931' }}>
+      <div className="container">
+        <Link className="navbar-brand fw-bold fs-3 text-white" to="/">Paster</Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto gap-2">
+            <li className="nav-item">
+              <Link
+                className={`nav-link${location.pathname === '/' ? ' active' : ''} px-3 text-white`}
+                to="/"
+              >
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link${location.pathname.startsWith('/paste') && location.pathname !== '/' ? ' active' : ''} px-3 text-white`}
+                to="/paste"
+              >
+                Paste
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   )
 }
 

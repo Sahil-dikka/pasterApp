@@ -7,7 +7,9 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Paste from './components/Paste';
 import ViewPaste from './components/ViewPaste';
-import PageNoteFound from './components/PageNotFound';
+import PageNotFound from './components/PageNotFound';
+import Home from './components/Home'
+
 
 function App() {
   
@@ -41,8 +43,8 @@ function App() {
         path:"*",
         element:
         <div>
-        <Navbar/>
-         <PageNoteFound/>
+        
+         <PageNotFound/>
         </div>
       },
       

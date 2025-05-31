@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+
+.navbar .nav-link:hover, .navbar .nav-link.active:hover {
+  background-color: #FFD600 !important; /* Bright yellow */
+  color: #0a1931 !important;            /* Dark blue text for contrast */
+  border-radius: 0.25rem;
+  transition: background 0.2s;
+}
